@@ -1,0 +1,26 @@
+name: 'github actions kube'
+author: 'Alexander Chernov <achernov@insight.com>'
+description: 'Run compact embedded Kubernetes as a GitHub Action; based on previous MIT licensed work respectfully'
+branding:
+  icon: 'aperture'
+  color: 'yellow'
+inputs:
+  k3s_tag:
+    description: "k3s tag to use"
+    required: false
+    default: 'v1.21.1+k3s1'
+  k3s_arguments:
+    description: "k3s arguments"
+    required: false
+    default: "--no-deploy=traefik"
+  kubectl_version:
+    description: "kubectl version to use"
+    required: false
+    default: "v1.22.2"
+  install_kubectl:
+    description: "whenever to copy kubectl to runner workspace"
+    required: false
+    default: "true"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
