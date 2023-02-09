@@ -25,7 +25,9 @@ jobs:
   publish:
     needs: [verify]
     if: github.event_name == 'push'
-    runs-on: ubuntu-latest
+    runs-on:
+      group: default
+      labels: poc-onprem-self-builder-runner-deployment
     steps:
       - uses: actions/checkout@v3
 
