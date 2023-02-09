@@ -13,7 +13,8 @@ on:
 
 jobs:
   verify:
-    runs-on: self-hosted
+    runs-on: 
+      labels: Insight-IT-Web-IACDevops/self-hosted
     env:
       DOCKER_BUILDKIT: "1"
     steps:
