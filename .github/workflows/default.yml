@@ -2,14 +2,14 @@ name: Docker
 on:
   push:
     paths:
-      - .github/workflows/docker.yml
+      - .github/workflows/default.yml
       - .dockerignore
-      - Dockerfile.action
+      - Dockerfile
   pull_request:
     paths:
-      - .github/workflows/docker.yml
+      - .github/workflows/default.yml
       - .dockerignore
-      - Dockerfile.action
+      - Dockerfile
 
 jobs:
   verify:
