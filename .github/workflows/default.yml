@@ -27,7 +27,6 @@ jobs:
     if: github.event_name == 'push'
     runs-on:
       group: organization/default
-      labels: poc-onprem-self-builder-runner-deployment
     steps:
       - uses: actions/checkout@v3
 
