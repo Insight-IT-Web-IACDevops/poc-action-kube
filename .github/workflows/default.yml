@@ -26,7 +26,7 @@ jobs:
     needs: [verify]
     if: github.event_name == 'push'
     runs-on: 
-      labels: poc-onprem-self-builder-runner-deployment
+      labels: self-hosted
     steps:
       - uses: actions/checkout@v3
 
