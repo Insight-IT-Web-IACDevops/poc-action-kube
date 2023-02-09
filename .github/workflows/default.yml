@@ -14,7 +14,7 @@ on:
 jobs:
   verify:
     runs-on: 
-      group: Insight-IT-Web-IACDevops/Default
+      group: organization/Default
       labels: self-hosted
     env:
       DOCKER_BUILDKIT: "1"
