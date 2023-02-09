@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Build image
-        run: docker build -f Dockerfile.action -t insight-it-web-iacdevops/poc-action-kube .
+        run: docker build -f Dockerfile -t insight-it-web-iacdevops/poc-action-kube .
 
   publish:
     needs: [verify]
