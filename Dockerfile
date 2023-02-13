@@ -1,15 +1,14 @@
-FROM alpine:3.17.1
+FROM docker:dind
+# FROM docker:23.0.1-cli-alpine3.17
 
 LABEL \
   "name"="PoC Action Kube" \
   "homepage"="https://github.com/marketplace/actions/poc-action-kube" \
   "repository"="https://github.com/Insight-IT-Web-IACDevops/poc-action-kube"
 
-RUN echo http://mirror.csclub.uwaterloo.ca/alpine/v3.17/main > /etc/apk/repositories
+RUN apk update && \
+  apk add --no-cache curl bash 
 
-RUN echo http://mirror.csclub.uwaterloo.ca/alpine/edge/testing >> /etc/apk/repositories && \
-  apk add --no-cache curl bash
+COPY entrypoint.sh /usr/local/bin/
 
-ADD entrypoint.sh /
-
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
